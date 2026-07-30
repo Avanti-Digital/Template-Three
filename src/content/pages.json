@@ -1,0 +1,53 @@
+{
+  "home": {
+    "finalCta": {
+      "kicker": "Have a project in mind?",
+      "heading": "Start with the basics.",
+      "body": "Share the location, the work you need, and your preferred timing. We will follow up with practical next steps."
+    }
+  },
+  "services": {
+    "kicker": "Services / Salt Lake City",
+    "heading": "Work that solves the actual problem.",
+    "intro": "Iron Ridge Services handles focused repairs, exterior improvements, landscape installation, custom fabrication, and recurring property needs. Every project starts with a clear scope.",
+    "detailLabel": "Typical project fit",
+    "includesLabel": "Work may include",
+    "ctaHeading": "Not sure where your project fits?",
+    "ctaBody": "Describe the issue and the outcome you need. We can sort out the right service category from there."
+  },
+  "projects": {
+    "kicker": "Project library / Sample content",
+    "heading": "Practical scopes. Durable materials.",
+    "intro": "Use this page to show finished work with concise scope notes, relevant locations, and clear photographs. The current entries are editable examples only.",
+    "ctaHeading": "Have a similar project?",
+    "ctaBody": "Send the property location and a short description. Photos, rough dimensions, and timing are useful when available."
+  },
+  "about": {
+    "kicker": "About / Owner-operated",
+    "heading": "One accountable point of contact.",
+    "intro": "Iron Ridge Services is presented as a practical, owner-operated contracting business serving residential and small commercial properties across the Salt Lake City area.",
+    "storyKicker": "A simple operating idea",
+    "storyHeading": "Take the work seriously.",
+    "storyBody": [
+      "Good service starts before the tools come out. It means listening to the problem, looking closely at the site, and being direct about scope, timing, and constraints.",
+      "During the work, communication stays simple. You know who is responsible, what is happening next, and where a decision is needed.",
+      "This temporary website copy is ready for the owner to replace with a real background, specialty, and working approach. It makes no claims about years, licenses, awards, or past clients."
+    ],
+    "principles": [
+      { "number": "01", "title": "Plan the details", "body": "Measure carefully, confirm access, and identify constraints before they become delays." },
+      { "number": "02", "title": "Communicate directly", "body": "Keep updates useful, raise issues early, and make next steps easy to understand." },
+      { "number": "03", "title": "Leave it right", "body": "Finish the small details, clean the work area, and walk through the result." }
+    ],
+    "ctaHeading": "Let’s look at the work.",
+    "ctaBody": "Tell us what is happening at the property and what a good result looks like."
+  },
+  "contact": {
+    "kicker": "Contact / Estimate request",
+    "heading": "Tell us what needs to be done.",
+    "intro": "A short, useful description is enough to start. Include the project location, timing, and any access or site conditions we should know about.",
+    "detailsKicker": "Direct contact",
+    "detailsHeading": "Prefer to call or email?",
+    "hoursLabel": "Business hours",
+    "areaLabel": "Service area"
+  }
+}

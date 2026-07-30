@@ -1,0 +1,22 @@
+.project-grid__note {
+  display: grid;
+  gap: .75rem;
+  max-width: 52rem;
+  margin-bottom: clamp(2.5rem, 5vw, 5rem);
+  padding: 1.2rem;
+  border-left: .3rem solid var(--color-accent);
+  background: var(--color-canvas);
+}
+.project-grid__note p { margin: 0; }
+.project-grid__items { display: grid; gap: clamp(2.5rem, 6vw, 6rem) 1.2rem; }
+.project-tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.project-tile__body { padding-top: 1rem; }
+.project-tile__body > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; color: var(--color-muted); }
+.project-tile h2 { margin-top: .7rem; font-size: clamp(2rem, 4vw, 3.7rem); }
+.project-tile p { max-width: 48rem; color: var(--color-muted); }
+@media (min-width: 60rem) {
+  .project-grid__items { grid-template-columns: 1.65fr 1fr; align-items: start; }
+  .project-tile--large { grid-column: 1 / -1; }
+  .project-tile--large { display: grid; grid-template-columns: 1.65fr 1fr; gap: 2rem; }
+  .project-tile--large img { aspect-ratio: 1.55; }
+}

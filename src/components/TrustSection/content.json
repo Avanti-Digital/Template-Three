@@ -1,0 +1,12 @@
+{
+  "number": "04",
+  "kicker": "What you can expect",
+  "heading": "The basics matter.",
+  "body": "Show up prepared. Keep the work area under control. Say what is changing. Finish the details. Those habits are not extras—they are the job.",
+  "points": [
+    { "title": "Direct contact", "body": "You work with the person responsible for the scope and the result." },
+    { "title": "Clear expectations", "body": "Questions, constraints, and next steps are discussed before work moves ahead." },
+    { "title": "Respect for the site", "body": "Access, cleanup, neighbors, tenants, and ongoing operations are considered." }
+  ],
+  "areaLabel": "Service area"
+}

@@ -1,0 +1,51 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import EstimateForm from '../components/EstimateForm/EstimateForm.astro';
+import global from '../content/global.json';
+import pages from '../content/pages.json';
+---
+<PageLayout title={global.seo.contact.title} description={global.seo.contact.description}>
+  <header class="page-intro">
+    <div class="page-intro__grid shell">
+      <div><p class="eyebrow">{pages.contact.kicker}</p><h1>{pages.contact.heading}</h1></div>
+      <p class="page-intro__copy">{pages.contact.intro}</p>
+    </div>
+  </header>
+  <EstimateForm />
+  <section class="contact-details section section--dark">
+    <div class="contact-details__grid shell">
+      <div>
+        <p class="eyebrow">{pages.contact.detailsKicker}</p>
+        <h2>{pages.contact.detailsHeading}</h2>
+        <a class="contact-details__primary" href={`tel:${global.business.phoneHref}`}>{global.business.phone}</a>
+        <a class="contact-details__primary" href={`mailto:${global.business.email}`}>{global.business.email}</a>
+      </div>
+      <div class="contact-details__facts">
+        <div>
+          <p class="meta">{pages.contact.hoursLabel}</p>
+          {global.businessHours.map((row) => <p><span>{row.days}</span><strong>{row.hours}</strong></p>)}
+        </div>
+        <div>
+          <p class="meta">{pages.contact.areaLabel}</p>
+          <p>{global.business.serviceArea}</p>
+          <p>{global.estimateInfo}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+<style>
+  .contact-details__grid { display:grid; gap:clamp(3rem,7vw,7rem); }
+  .contact-details h2 { max-width:10ch; margin-block:.65rem 2rem; }
+  .contact-details__primary { display:block; width:fit-content; max-width:100%; overflow-wrap:anywhere; margin-block:.6rem; font-family:var(--font-display); font-size:clamp(1.5rem,3vw,2.7rem); font-weight:900; line-height:1.05; text-underline-offset:.15em; }
+  .contact-details__facts { display:grid; gap:2rem; align-self:end; }
+  .contact-details__facts>div { padding-top:1rem; border-top:1px solid #555852; }
+  .contact-details__facts .meta { color:#bfc1bb; }
+  .contact-details__facts p { color:#d0d1cc; }
+  .contact-details__facts p span,.contact-details__facts p strong { display:block; }
+  .contact-details__facts p strong { color:#aeb0aa; font-weight:400; }
+  @media (min-width:60rem) {
+    .contact-details__grid { grid-template-columns:1fr 1fr; }
+    .contact-details__facts { grid-template-columns:1fr 1fr; }
+  }
+</style>

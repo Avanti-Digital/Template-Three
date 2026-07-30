@@ -1,0 +1,21 @@
+{
+  "heading": "Project details",
+  "intro": "This form opens an email draft with your project details. No information is stored or submitted to a website database.",
+  "fields": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "service": "Service type",
+    "location": "Project location",
+    "description": "Project description"
+  },
+  "placeholders": {
+    "name": "Your name",
+    "email": "you@example.com",
+    "phone": "(801) 555-0123",
+    "location": "City or neighborhood",
+    "description": "What needs to be done? Include timing, access, dimensions, or other useful details."
+  },
+  "submit": "Prepare Estimate Email",
+  "note": "Your email app will open so you can review and send the request."
+}

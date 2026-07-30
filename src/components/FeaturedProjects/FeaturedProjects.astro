@@ -1,0 +1,39 @@
+---
+import './FeaturedProjects.css';
+import { Image } from 'astro:assets';
+import content from './content.json';
+import global from '../../content/global.json';
+import { getAssetByPath } from '../../utils/getAssetByPath';
+import TextLink from '../TextLink/TextLink.astro';
+const featured = global.projects.filter((project) => project.featured);
+---
+<section class="featured section" id="projects">
+  <div class="shell">
+    <div class="featured__header">
+      <p class="featured__number">{content.number}</p>
+      <div><p class="eyebrow">{content.kicker}</p><h2>{content.heading}</h2></div>
+      <div><p>{content.intro}</p><TextLink href="/contact/" label="Discuss a project" /></div>
+    </div>
+    <p class="featured__notice meta">Editable sample content — not a claim of completed client work</p>
+    <div class="featured__grid">
+      {featured.map((project, index) => (
+        <article class:list={['project-card', index === 0 && 'project-card--wide']}>
+          <div class="project-card__media">
+            <Image
+              src={getAssetByPath(project.image)}
+              alt={project.imageAlt}
+              widths={[480, 720, 1100, 1600]}
+              sizes={index === 0 ? '(min-width: 900px) 65vw, 100vw' : '(min-width: 900px) 33vw, 100vw'}
+              loading="lazy"
+            />
+          </div>
+          <div class="project-card__meta">
+            <span class="meta">{project.category}</span><span class="meta">{project.location}</span>
+          </div>
+          <h3>{project.title}</h3>
+          <p>{project.summary}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

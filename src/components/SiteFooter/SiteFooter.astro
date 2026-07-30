@@ -1,0 +1,32 @@
+---
+import './SiteFooter.css';
+import global from '../../content/global.json';
+import content from './content.json';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="site-footer__grid shell">
+    <div class="site-footer__lead">
+      <p class="eyebrow">Iron Ridge / SLC</p>
+      <p class="site-footer__tagline">{content.tagline}</p>
+    </div>
+    <div>
+      <p class="meta">Contact</p>
+      <a href={`tel:${global.business.phoneHref}`}>{global.business.phone}</a>
+      <a href={`mailto:${global.business.email}`}>{global.business.email}</a>
+      <span>{global.business.location}</span>
+    </div>
+    <div>
+      <p class="meta">Navigate</p>
+      {global.navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+    <div>
+      <p class="meta">Hours</p>
+      {global.businessHours.map((row) => <span>{row.days}<br /><strong>{row.hours}</strong></span>)}
+    </div>
+  </div>
+  <div class="site-footer__base shell">
+    <small>© {year} {content.copyrightPrefix}. All rights reserved.</small>
+    <small>{content.sampleNotice}</small>
+  </div>
+</footer>

@@ -1,0 +1,50 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PrimaryButton from '../components/PrimaryButton/PrimaryButton.astro';
+import global from '../content/global.json';
+import pages from '../content/pages.json';
+---
+<PageLayout title={global.seo.services.title} description={global.seo.services.description}>
+  <header class="page-intro">
+    <div class="page-intro__grid shell">
+      <div><p class="eyebrow">{pages.services.kicker}</p><h1>{pages.services.heading}</h1></div>
+      <p class="page-intro__copy">{pages.services.intro}</p>
+    </div>
+  </header>
+  <section class="service-detail section section--surface">
+    <div class="shell">
+      {global.services.map((service) => (
+        <article id={service.slug} class="service-detail__item">
+          <span class="service-detail__number">{service.number}</span>
+          <div><h2>{service.title}</h2><p class="service-detail__summary">{service.summary}</p></div>
+          <div class="service-detail__facts">
+            <div><h3>{pages.services.includesLabel}</h3><ul>{service.includes.map((item) => <li>{item}</li>)}</ul></div>
+            <div><h3>{pages.services.detailLabel}</h3><p>{service.projectTypes}</p></div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section class="cta-band">
+    <div class="cta-band__grid shell">
+      <h2>{pages.services.ctaHeading}</h2>
+      <div><p>{pages.services.ctaBody}</p><PrimaryButton href="/contact/" label={global.business.primaryCta} variant="dark" /></div>
+    </div>
+  </section>
+</PageLayout>
+<style>
+  .service-detail__item { display:grid; gap:1.5rem; padding-block:clamp(2.5rem,5vw,5rem); border-top:1px solid var(--color-line); }
+  .service-detail__item:last-child { border-bottom:1px solid var(--color-line); }
+  .service-detail__number { color:var(--color-accent-dark); font-family:var(--font-display); font-size:clamp(2rem,4vw,3.8rem); font-weight:900; line-height:1; }
+  .service-detail h2 { max-width:12ch; }
+  .service-detail__summary { max-width:35rem; margin-top:1rem; color:var(--color-muted); }
+  .service-detail__facts { display:grid; gap:1.5rem; }
+  .service-detail__facts>div { padding-top:1rem; border-top:1px solid var(--color-line); }
+  .service-detail__facts h3 { margin-bottom:.8rem; font-family:var(--font-technical); font-size:.76rem; letter-spacing:.08em; line-height:1.3; }
+  .service-detail__facts ul { margin:0; padding-left:1.2rem; }
+  .service-detail__facts p { margin:0; }
+  @media (min-width:60rem) {
+    .service-detail__item { grid-template-columns:.16fr .8fr 1.04fr; }
+    .service-detail__facts { grid-template-columns:1fr 1fr; }
+  }
+</style>

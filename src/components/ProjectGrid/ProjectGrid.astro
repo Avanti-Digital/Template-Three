@@ -1,0 +1,33 @@
+---
+import './ProjectGrid.css';
+import { Image } from 'astro:assets';
+import content from './content.json';
+import global from '../../content/global.json';
+import { getAssetByPath } from '../../utils/getAssetByPath';
+---
+<section class="project-grid section section--surface">
+  <div class="shell">
+    <div class="project-grid__note">
+      <p class="meta">{content.sampleLabel}</p>
+      <p>{global.projectsNote}</p>
+    </div>
+    <div class="project-grid__items">
+      {global.projects.map((project, index) => (
+        <article class:list={['project-tile', index % 3 === 0 && 'project-tile--large']}>
+          <Image
+            src={getAssetByPath(project.image)}
+            alt={project.imageAlt}
+            widths={[480, 720, 1100, 1600]}
+            sizes={index % 3 === 0 ? '(min-width: 900px) 62vw, 100vw' : '(min-width: 900px) 38vw, 100vw'}
+            loading="lazy"
+          />
+          <div class="project-tile__body">
+            <div><span class="meta">{project.category}</span><span class="meta">{project.location}</span></div>
+            <h2>{project.title}</h2>
+            <p>{project.summary}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

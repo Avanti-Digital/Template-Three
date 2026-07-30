@@ -1,0 +1,15 @@
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding-block: .25rem;
+  border-bottom: 1px solid currentColor;
+  font-family: var(--font-technical);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+.text-link:hover { color: var(--color-accent-dark); gap: .8rem; }

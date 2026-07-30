@@ -1,0 +1,42 @@
+---
+import './Navigation.css';
+import content from './content.json';
+import global from '../../content/global.json';
+interface Props { currentPath: string; }
+const { currentPath } = Astro.props;
+const isCurrent = (href: string) => href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+<nav class="nav" aria-label="Primary navigation">
+  <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+    <span>{content.menuLabel}</span><span class="nav__toggle-mark" aria-hidden="true"></span>
+  </button>
+  <div class="nav__panel" id="primary-menu">
+    <ul class="nav__list">
+      {global.navigation.map((item) => (
+        <li><a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</nav>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.nav__toggle');
+  const panel = document.querySelector<HTMLElement>('.nav__panel');
+  if (toggle && panel) {
+    const close = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    };
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      document.body.classList.toggle('menu-open', !open);
+    });
+    panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        close();
+        toggle.focus();
+      }
+    });
+  }
+</script>

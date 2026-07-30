@@ -1,0 +1,85 @@
+.nav__toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(.85rem, 1.7vw, 1.8rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav__list a {
+  position: relative;
+  padding-block: .5rem;
+  font-family: var(--font-technical);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav__list a::after {
+  position: absolute;
+  right: 0;
+  bottom: .1rem;
+  left: 0;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  background: var(--color-accent);
+  content: "";
+  transition: transform var(--transition-fast);
+}
+.nav__list a:hover::after,
+.nav__list a[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
+
+@media (max-width: 55rem) {
+  .nav__toggle {
+    display: flex;
+    min-height: 2.8rem;
+    align-items: center;
+    gap: .65rem;
+    padding: .4rem;
+    font-family: var(--font-technical);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .nav__toggle-mark,
+  .nav__toggle-mark::before {
+    display: block;
+    width: 1.35rem;
+    height: 2px;
+    background: currentColor;
+    content: "";
+    transition: transform var(--transition-fast);
+  }
+  .nav__toggle-mark::before { transform: translateY(-.38rem); }
+  .nav__toggle[aria-expanded="true"] .nav__toggle-mark { transform: rotate(45deg); }
+  .nav__toggle[aria-expanded="true"] .nav__toggle-mark::before { transform: rotate(90deg); }
+  .nav__panel {
+    position: fixed;
+    inset: var(--header-height) 0 auto;
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 0 solid var(--color-line);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    visibility: hidden;
+    transition: max-height 240ms ease, border-width 240ms ease, visibility 240ms;
+  }
+  .nav__toggle[aria-expanded="true"] + .nav__panel {
+    max-height: calc(100vh - var(--header-height));
+    border-bottom-width: 1px;
+    visibility: visible;
+  }
+  .nav__list { display: block; padding: 1.2rem var(--gutter) 2rem; }
+  .nav__list li { border-bottom: 1px solid var(--color-line); }
+  .nav__list a { display: block; padding-block: 1rem; font-size: 1rem; }
+  .nav__list a::after { display: none; }
+}

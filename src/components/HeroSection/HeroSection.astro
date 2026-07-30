@@ -1,0 +1,38 @@
+---
+import './HeroSection.css';
+import { Image } from 'astro:assets';
+import content from './content.json';
+import global from '../../content/global.json';
+import { getAssetByPath } from '../../utils/getAssetByPath';
+import PrimaryButton from '../PrimaryButton/PrimaryButton.astro';
+import TextLink from '../TextLink/TextLink.astro';
+---
+<section class="hero">
+  <Image
+    class="hero__image"
+    src={getAssetByPath(global.sharedImages.hero.path)}
+    alt={global.sharedImages.hero.alt}
+    widths={[640, 960, 1440, 1920]}
+    sizes="100vw"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="hero__content shell">
+    <div class="hero__top">
+      <p class="eyebrow">{content.kicker}</p>
+      <p class="hero__status"><span aria-hidden="true"></span>{content.status}</p>
+    </div>
+    <div class="hero__body">
+      <h1>{content.headline}</h1>
+      <div class="hero__support">
+        <p>{content.body}</p>
+        <div class="button-row">
+          <PrimaryButton href="/contact/" label={global.business.primaryCta} />
+          <TextLink href="/#projects" label={global.business.secondaryCta} />
+        </div>
+      </div>
+    </div>
+    <p class="hero__caption meta">{content.imageCaption}</p>
+  </div>
+</section>

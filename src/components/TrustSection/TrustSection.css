@@ -1,0 +1,17 @@
+.trust__grid { display: grid; gap: clamp(3rem, 7vw, 7rem); }
+.trust__number { margin: 0 0 2rem; color: var(--color-accent-dark); font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 900; line-height: 1; }
+.trust h2 { max-width: 10ch; margin-top: .65rem; }
+.trust__lead { max-width: 38rem; margin-top: 1.5rem; font-size: clamp(1.1rem, 1.7vw, 1.35rem); }
+.trust__points { margin-top: clamp(2.5rem, 5vw, 4.5rem); border-top: 1px solid var(--color-line); }
+.trust__points > div { display: grid; gap: .65rem; padding-block: 1.2rem; border-bottom: 1px solid var(--color-line); }
+.trust__points h3 { font-size: 1.25rem; }
+.trust__points p { margin: 0; color: var(--color-muted); }
+.trust__media { margin: 0; align-self: stretch; background: var(--color-dark); color: var(--color-white); }
+.trust__media img { width: 100%; height: min(38rem, 70vh); object-fit: cover; }
+.trust__media figcaption { display: grid; gap: .5rem; padding: 1.2rem; }
+.trust__media .meta { color: #aeb0aa; }
+@media (min-width: 60rem) {
+  .trust__grid { grid-template-columns: 1fr .85fr; }
+  .trust__points > div { grid-template-columns: .55fr 1fr; }
+  .trust__media img { height: 100%; min-height: 40rem; }
+}

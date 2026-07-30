@@ -1,0 +1,18 @@
+---
+import './SiteHeader.css';
+import { Image } from 'astro:assets';
+import global from '../../content/global.json';
+import content from './content.json';
+import { getAssetByPath } from '../../utils/getAssetByPath';
+import Navigation from '../Navigation/Navigation.astro';
+---
+<header class="site-header">
+  <div class="site-header__inner shell">
+    <a class="site-header__brand" href="/" aria-label={`${global.business.name}, home`}>
+      <Image src={getAssetByPath(global.logo.path)} alt="" width={42} height={42} />
+      <span><strong>Iron Ridge</strong><small>Services</small></span>
+    </a>
+    <Navigation currentPath={Astro.props.currentPath} />
+    <a class="site-header__cta" href="/contact/">{content.ctaLabel}<span aria-hidden="true">↗</span></a>
+  </div>
+</header>

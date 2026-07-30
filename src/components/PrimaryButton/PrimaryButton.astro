@@ -1,0 +1,10 @@
+---
+import './PrimaryButton.css';
+interface Props {
+  href: string;
+  variant?: 'accent' | 'dark' | 'light' | 'outline';
+  label: string;
+}
+const { href, variant = 'accent', label } = Astro.props;
+---
+<a class:list={['button', `button--${variant}`]} href={href}>{label}<span aria-hidden="true">↗</span></a>

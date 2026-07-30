@@ -1,0 +1,162 @@
+{
+  "business": {
+    "name": "Iron Ridge Services",
+    "descriptor": "Residential & Commercial Contracting",
+    "location": "Salt Lake City, Utah",
+    "serviceArea": "Salt Lake City and nearby communities along the Wasatch Front",
+    "email": "hello@ironridgeservices.com",
+    "phone": "(801) 555-0148",
+    "phoneHref": "+18015550148",
+    "primaryCta": "Request an Estimate",
+    "secondaryCta": "View Our Work"
+  },
+  "logo": {
+    "path": "brand/logo.svg",
+    "alt": "Iron Ridge Services"
+  },
+  "navigation": [
+    { "label": "Home", "href": "/" },
+    { "label": "Services", "href": "/services/" },
+    { "label": "Contact", "href": "/contact/" }
+  ],
+  "seo": {
+    "home": {
+      "title": "Iron Ridge Services | Contracting in Salt Lake City",
+      "description": "Practical residential and commercial contracting, repairs, exterior construction, landscape installation, fabrication, and property service in Salt Lake City."
+    },
+    "services": {
+      "title": "Contracting Services | Iron Ridge Services",
+      "description": "Explore repair, construction, landscape, maintenance, fabrication, and commercial service options from Iron Ridge Services."
+    },
+    "contact": {
+      "title": "Request an Estimate | Iron Ridge Services",
+      "description": "Tell Iron Ridge Services about your repair, construction, landscape, fabrication, or property service project."
+    }
+  },
+  "socialProfiles": [],
+  "businessHours": [
+    { "days": "Monday–Friday", "hours": "7:00 AM–5:30 PM" },
+    { "days": "Saturday", "hours": "By appointment" },
+    { "days": "Sunday", "hours": "Closed" }
+  ],
+  "estimateInfo": "Send the basics, including location, scope, timing, and any site constraints. We will follow up to discuss fit and next steps.",
+  "sharedImages": {
+    "hero": { "path": "hero/service-hero.png", "alt": "Contractor measuring a horizontal cedar fence near the Wasatch Mountains" },
+    "owner": { "path": "business/owner-portrait.png", "alt": "Owner-operator tightening the hinge on a steel garden gate" },
+    "crew": { "path": "business/crew-at-work.png", "alt": "Contractor installing drought-tolerant landscaping beside steel edging" },
+    "equipment": { "path": "business/equipment.png", "alt": "Steel gate frame and fabrication tools on a workshop table" }
+  },
+  "services": [
+    {
+      "number": "01",
+      "slug": "general-repairs",
+      "title": "General Repairs",
+      "summary": "Straightforward fixes for worn, damaged, or unfinished parts of a property.",
+      "includes": ["Doors, gates, and hardware", "Trim, siding, and finish repairs", "Small structural and carpentry fixes"],
+      "projectTypes": "Punch lists, deferred maintenance, turnover repairs, and targeted fixes."
+    },
+    {
+      "number": "02",
+      "slug": "exterior-construction",
+      "title": "Exterior Construction",
+      "summary": "Durable outdoor improvements built around the site, material, and intended use.",
+      "includes": ["Fences and screens", "Decks, stairs, and railings", "Small concrete and exterior structures"],
+      "projectTypes": "Backyards, entries, side yards, access points, and exterior upgrades."
+    },
+    {
+      "number": "03",
+      "slug": "landscape-installation",
+      "title": "Landscape Installation",
+      "summary": "Practical landscape work with clean grading, defined edges, and durable materials.",
+      "includes": ["Planting and bed preparation", "Gravel, edging, and paths", "Drip-line and site corrections"],
+      "projectTypes": "Water-wise conversions, new beds, drainage improvements, and refresh work."
+    },
+    {
+      "number": "04",
+      "slug": "property-maintenance",
+      "title": "Property Maintenance",
+      "summary": "Planned upkeep that keeps small problems from becoming larger ones.",
+      "includes": ["Seasonal property checks", "Exterior adjustments and repairs", "Recurring service lists"],
+      "projectTypes": "Homes, rentals, offices, small retail, and light commercial properties."
+    },
+    {
+      "number": "05",
+      "slug": "custom-fabrication",
+      "title": "Custom Fabrication",
+      "summary": "Simple, useful steel components designed to solve a specific site need.",
+      "includes": ["Gates and frames", "Brackets and supports", "Rails and utility components"],
+      "projectTypes": "One-off property hardware, access improvements, and repair parts."
+    },
+    {
+      "number": "06",
+      "slug": "commercial-service",
+      "title": "Commercial Service Work",
+      "summary": "Responsive repair and improvement work for small commercial properties.",
+      "includes": ["Doors and access hardware", "Exterior site repairs", "Tenant and turnover punch lists"],
+      "projectTypes": "Warehouses, shops, offices, small retail, and managed properties."
+    }
+  ],
+  "projectsNote": "The project names and descriptions below are editable sample content. They demonstrate suitable project types and do not represent completed client work.",
+  "projects": [
+    {
+      "slug": "cedar-fence-installation",
+      "title": "Cedar Fence Installation",
+      "category": "Exterior Construction",
+      "location": "Salt Lake City, Utah",
+      "summary": "Sample scope: removal of an aging fence and installation of a horizontal cedar system on steel posts.",
+      "image": "projects/project-01.png",
+      "imageAlt": "Horizontal cedar fence installation with mountains in the background",
+      "featured": true
+    },
+    {
+      "slug": "concrete-entry-rebuild",
+      "title": "Concrete Entry Rebuild",
+      "category": "Exterior Construction",
+      "location": "Salt Lake City, Utah",
+      "summary": "Sample scope: replace deteriorated entry steps and add a simple steel handrail.",
+      "image": "projects/project-02.png",
+      "imageAlt": "Board-formed concrete entry steps with a black steel handrail",
+      "featured": true
+    },
+    {
+      "slug": "water-wise-front-yard",
+      "title": "Water-Wise Front Yard",
+      "category": "Landscape Installation",
+      "location": "Murray, Utah",
+      "summary": "Sample scope: install native planting, drip lines, steel edging, gravel, and a defined access path.",
+      "image": "projects/project-03.png",
+      "imageAlt": "Contractor placing drought-tolerant grasses in a gravel landscape",
+      "featured": true
+    },
+    {
+      "slug": "steel-utility-gate",
+      "title": "Steel Utility Gate",
+      "category": "Custom Fabrication",
+      "location": "South Salt Lake, Utah",
+      "summary": "Sample scope: fabricate a durable steel access gate sized to an existing service opening.",
+      "image": "projects/project-04.png",
+      "imageAlt": "Fabricator checking a steel gate frame with a square",
+      "featured": false
+    },
+    {
+      "slug": "commercial-door-service",
+      "title": "Commercial Door Service",
+      "category": "Commercial Service",
+      "location": "West Valley City, Utah",
+      "summary": "Sample scope: diagnose a service-door issue and adjust the closer, strike, and exterior hardware.",
+      "image": "projects/project-05.png",
+      "imageAlt": "Technician adjusting a commercial exterior door",
+      "featured": false
+    },
+    {
+      "slug": "cedar-deck-stair",
+      "title": "Cedar Deck Stair",
+      "category": "General Construction",
+      "location": "Millcreek, Utah",
+      "summary": "Sample scope: rebuild a backyard landing and stair with cedar treads and a steel support frame.",
+      "image": "projects/project-06.png",
+      "imageAlt": "Finished cedar deck stair on a black steel support frame",
+      "featured": false
+    }
+  ]
+}

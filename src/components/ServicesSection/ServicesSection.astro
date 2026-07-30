@@ -1,0 +1,31 @@
+---
+import './ServicesSection.css';
+import content from './content.json';
+import global from '../../content/global.json';
+import TextLink from '../TextLink/TextLink.astro';
+---
+<section class="services section section--surface" id="services">
+  <div class="shell">
+    <div class="services__header">
+      <p class="services__number">{content.number}</p>
+      <div>
+        <p class="eyebrow">{content.kicker}</p>
+        <h2>{content.heading}</h2>
+      </div>
+      <div class="services__intro">
+        <p>{content.intro}</p>
+        <TextLink href="/services/" label={content.linkLabel} />
+      </div>
+    </div>
+    <ol class="services__list">
+      {global.services.map((service) => (
+        <li>
+          <span class="meta">{service.number}</span>
+          <h3>{service.title}</h3>
+          <p>{service.summary}</p>
+          <a href={`/services/#${service.slug}`} aria-label={`Read about ${service.title}`}>+</a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

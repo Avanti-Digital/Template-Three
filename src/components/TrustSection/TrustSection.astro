@@ -1,0 +1,30 @@
+---
+import './TrustSection.css';
+import { Image } from 'astro:assets';
+import content from './content.json';
+import global from '../../content/global.json';
+import { getAssetByPath } from '../../utils/getAssetByPath';
+---
+<section class="trust section section--surface">
+  <div class="trust__grid shell">
+    <div class="trust__copy">
+      <p class="trust__number">{content.number}</p>
+      <p class="eyebrow">{content.kicker}</p>
+      <h2>{content.heading}</h2>
+      <p class="trust__lead">{content.body}</p>
+      <div class="trust__points">
+        {content.points.map((point) => <div><h3>{point.title}</h3><p>{point.body}</p></div>)}
+      </div>
+    </div>
+    <figure class="trust__media">
+      <Image
+        src={getAssetByPath(global.sharedImages.owner.path)}
+        alt={global.sharedImages.owner.alt}
+        widths={[480, 720, 1000]}
+        sizes="(min-width: 900px) 42vw, 100vw"
+        loading="lazy"
+      />
+      <figcaption><span class="meta">{content.areaLabel}</span>{global.business.serviceArea}</figcaption>
+    </figure>
+  </div>
+</section>

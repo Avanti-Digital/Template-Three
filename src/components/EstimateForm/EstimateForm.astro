@@ -1,0 +1,68 @@
+---
+import './EstimateForm.css';
+import content from './content.json';
+import global from '../../content/global.json';
+---
+<section class="estimate section section--surface">
+  <div class="estimate__grid shell">
+    <div>
+      <p class="eyebrow">Estimate request / 01</p>
+      <h2>{content.heading}</h2>
+      <p>{content.intro}</p>
+    </div>
+    <form class="estimate__form" data-email={global.business.email}>
+      <div class="field">
+        <label for="name">{content.fields.name}</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder={content.placeholders.name} required />
+      </div>
+      <div class="field">
+        <label for="email">{content.fields.email}</label>
+        <input id="email" name="email" type="email" autocomplete="email" placeholder={content.placeholders.email} required />
+      </div>
+      <div class="field">
+        <label for="phone">{content.fields.phone}</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder={content.placeholders.phone} required />
+      </div>
+      <div class="field">
+        <label for="service">{content.fields.service}</label>
+        <select id="service" name="service" required>
+          <option value="">Choose a service</option>
+          {global.services.map((service) => <option value={service.title}>{service.title}</option>)}
+          <option value="Not sure">Not sure yet</option>
+        </select>
+      </div>
+      <div class="field field--wide">
+        <label for="location">{content.fields.location}</label>
+        <input id="location" name="location" type="text" autocomplete="street-address" placeholder={content.placeholders.location} required />
+      </div>
+      <div class="field field--wide">
+        <label for="description">{content.fields.description}</label>
+        <textarea id="description" name="description" rows="7" placeholder={content.placeholders.description} required></textarea>
+      </div>
+      <div class="field--wide estimate__submit">
+        <button type="submit">{content.submit}<span aria-hidden="true">↗</span></button>
+        <p>{content.note}</p>
+      </div>
+    </form>
+  </div>
+</section>
+<script>
+  const form = document.querySelector<HTMLFormElement>('.estimate__form');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const email = form.dataset.email;
+    const subject = `Estimate request — ${data.get('service') || 'Project inquiry'}`;
+    const body = [
+      `Name: ${data.get('name')}`,
+      `Email: ${data.get('email')}`,
+      `Phone: ${data.get('phone')}`,
+      `Service: ${data.get('service')}`,
+      `Project location: ${data.get('location')}`,
+      '',
+      'Project description:',
+      `${data.get('description')}`
+    ].join('\n');
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>

@@ -1,0 +1,10 @@
+{
+  "number": "03",
+  "kicker": "How it works",
+  "heading": "A clear path from call to closeout.",
+  "steps": [
+    { "number": "01", "title": "Start with the scope", "body": "Tell us what needs attention, where the project is, and what timing you have in mind." },
+    { "number": "02", "title": "Confirm the plan", "body": "We look at the site, define the work, and make sure expectations are clear before scheduling." },
+    { "number": "03", "title": "Do the work", "body": "The job moves forward with direct updates, a tidy work area, and a final walk-through." }
+  ]
+}
